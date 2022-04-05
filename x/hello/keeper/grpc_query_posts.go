@@ -4,12 +4,14 @@ import (
 	"context"
 
 	"github.com/cosmonaut/hello/x/hello/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+/* 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"google.golang.org/grpc/codes"
-	"google.golang.org/grpc/status"
+	"google.golang.org/grpc/status" */
 )
 
 func (k Keeper) Posts(goCtx context.Context, req *types.QueryPostsRequest) (*types.QueryPostsResponse, error) {
+	return &types.QueryPostsResponse{Title: "Hello!", Body: "Starport"}, nil
+	/* 	
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
@@ -19,5 +21,7 @@ func (k Keeper) Posts(goCtx context.Context, req *types.QueryPostsRequest) (*typ
 	// TODO: Process the query
 	_ = ctx
 
-	return &types.QueryPostsResponse{}, nil
+	return &types.QueryPostsResponse{}, nil 
+	*/
+
 }
